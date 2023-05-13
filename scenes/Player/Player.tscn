@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsxgkqi35weqn"]
+
+[ext_resource type="Script" path="res://scenes/Player/Player.gd" id="1_7rp6c"]
+[ext_resource type="PackedScene" uid="uid://dietgho87hah6" path="res://scenes/Player/Player.fbx" id="2_nsxou"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rfarg"]
+height = 2.75
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_7rp6c")
+
+[node name="Player" parent="." instance=ExtResource("2_nsxou")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0.04, 0)
+shape = SubResource("CapsuleShape3D_rfarg")
